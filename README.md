@@ -1,7 +1,9 @@
 # ⭐ Ethical Hacking Python Scripts
 still working on it ;)
 ## contents 
-### MAC changer
-A simple script that changes the MAC address on linux systems
+| Script | Description |
+|----------|-------------|
+| 🔄 MAC Changer | Change the MAC address of a network interface |[click here](mac_changer/)
 
-[click here](mac_changer/)
+
+---
