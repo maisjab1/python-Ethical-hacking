@@ -1,5 +1,5 @@
 still working on it ;)
 # contents 
 ## MAC changer
-
-[mac changer](mac_changer/)
+A simple script that changes the MAC address on linux systems 
+[click here](mac_changer/)
