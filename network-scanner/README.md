@@ -32,6 +32,6 @@ python3 network-scanner.py --ip 192.168.1.5
 
 | Option              | Description                                         |
 | ------------------- | --------------------------------------------------- |
-| `--ip    |IP Address |
+| --ip    |IP Address |
 
 
