@@ -4,6 +4,7 @@ still working on it ;)
 | Script | Description | link |
 |----------|-------------|-------------|
 | 🔄 MAC Changer | Change the MAC address of a network interface | [click here](mac_changer/)
+| 🔍 NETWORK SCANNER | Scan a network to discover live hosts and their MAC adresses | [click here](network_scanner/)
 
 
 ---
