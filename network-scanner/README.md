@@ -11,20 +11,20 @@ This Python script scans a given ip or ip range for live hosts and thier MAC adr
 
 ## Requirements
 
-* Python 3.x
+* Scapy for Python 2.7+
 * Linux operating system
 
 ## Usage
 
 ```bash
- python3 network_scanner.py --ip <ip address>
+ python3 network_scanner.py --target <ip address>
 ```
 
 ### Example
 
 ```bash
-python3 network-scanner.py --ip 192.168.1.0/24
-python3 network-scanner.py --ip 192.168.1.5
+python3 network-scanner.py -t 192.168.1.0/24
+python3 network-scanner.py --target 192.168.1.5
 
 ```
 
@@ -32,6 +32,6 @@ python3 network-scanner.py --ip 192.168.1.5
 
 | Option              | Description                                         |
 | ------------------- | --------------------------------------------------- |
-| --ip    |IP Address |
+|-t, --target    | target IP Address |
 
 
