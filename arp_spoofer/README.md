@@ -4,7 +4,7 @@
 
 This project is a Python-based ARP spoofing tool developed for educational purposes and authorized network security testing. It demonstrates how Address Resolution Protocol (ARP) poisoning can manipulate ARP tables within a local network.
 
-The tool continuously sends forged ARP replies between two hosts, causing each host to associate the attacker's MAC address with the other host's IP address creating a Man In the Middle attack.
+The tool continuously sends forged ARP replies between two hosts, causing each host to associate the attacker's MAC address with the other host's IP address.
 
 ## ✨ Features
 
