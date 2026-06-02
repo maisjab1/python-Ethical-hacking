@@ -4,15 +4,15 @@ import optparse
 
 def parse():
     parser=optparse.OptionParser()
-    parser.add_option("--ip", dest="ip", help="IP adress or range to discover")
+    parser.add_option("-t","--target", dest="ip", help="IP adress or range to discover")
     opt,args=parser.parse_args()
-    ip=opt.ip
-    if not ip:
-        print("[-]please provide an IP")
+    target=opt.ip
+    if not target:
+        print("[-]please provide a target ip")
         exit(0)
-    return ip
-def scan(ip):
-    arp_req= scapy.ARP(pdst=ip)
+    return target
+def scan(target):
+    arp_req= scapy.ARP(pdst=target)
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
     arp_req_broadcast = broadcast/arp_req
     answered,unanswered =scapy.srp(arp_req_broadcast,timeout=1,verbose=False)
@@ -22,8 +22,8 @@ def scan(ip):
         print(f"    {element[1].psrc}",end="         ")
         print(f"    {element[1].hwsrc}")
 try:
-    ip=parse()
+    target = parse()
     print("\n\n     ***           Network Scanner          ***\n\n")
-    scan(ip)
+    scan(target)
 except Exception as e:
     print(e)
